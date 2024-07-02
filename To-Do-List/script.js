@@ -1,5 +1,10 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+inputBox.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
 
 function addTask() {
     if (inputBox.value === '') {
@@ -13,7 +18,7 @@ function addTask() {
         li.appendChild(span);
     }
 
-    inputBox.value = "clear kar be";
+    inputBox.value = "";
     saveData();
 }
 
